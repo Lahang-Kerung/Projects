@@ -29,19 +29,19 @@ public:
     }
     void displayBoard() override {
         cout << "\nCurrent Board:\n\n";
-        cout << "  11 \t| \t12 \t| \t13\n";
-        cout << "--------------------------------\n";
-        cout << "  21 \t| \t22 \t| \t23\n";
-        cout << "--------------------------------\n";
-        cout << "  31 \t| \t32 \t| \t33\n\n";
+        cout << "  11 | 12 | 13\n";
+        cout << "----------------\n";
+        cout << "  21 | 22 | 23\n";
+        cout << "----------------\n";
+        cout << "  31 | 32 | 33\n\n";
         cout << "Game Status:\n";
         for (int i = 0; i < 3; i++) {
             for (int j = 0; j < 3; j++) {
                 char symbol = ' ';
                 if (board[i][j] == 1) symbol = player1Symbol;
                 else if (board[i][j] == 2) symbol = player2Symbol;
-                cout << "  " << symbol << "  ";
-                if (j < 2) cout << "|";
+                cout << "  " << symbol << " ";
+                if (j < 2) cout << " |";
             }
             cout << "\n";
             if (i < 2) cout << "-----------------\n";
@@ -89,11 +89,11 @@ int main() {
     cout << "Player 1 (X) vs Player 2 (O)\n";
     cout << "Enter moves as coordinates (11-33)\n\n";
     cout << "Reference Board:\n";
-    cout << "11 | 12 | 13\n";
-    cout << "-----------\n";
-    cout << "21 | 22 | 23\n";
-    cout << "-----------\n";
-    cout << "31 | 32 | 33\n\n";
+    cout << "  11 | 12 | 13\n";
+    cout << "---------------\n";
+    cout << "  21 | 22 | 23\n";
+    cout << "---------------\n";
+    cout << "  31 | 32 | 33\n\n";
     while (true) {
         game.displayBoard();
         cout << "Player " << currentPlayer << " (" << (currentPlayer == 1 ? 'X' : 'O') << "), enter your move: ";
